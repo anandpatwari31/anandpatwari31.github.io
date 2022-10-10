@@ -1,100 +1,100 @@
-<!DOCTYPE html>
 <html>
-<head>
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-td,
-th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-th {
-    background-color: #dddddd;
-}
-.even {
-    background-color: #ecf6fc;
-}
-.odd {
-    background-color: #ddeedd;
-}
-.myDragClass {
-    background-color: yellow;
-    font-size: 16pt;
-}
-</style>
-</head>
-<body>
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $("#tblData").find("tr:even").addClass("even");
+          $("#tblData").find("tr:odd").addClass("odd");
+          $("#tblData").tableDnD({
+            onDragClass: "myDragClass",
+            onDrop: function(table, row) {
+              $("#tblData").find("tr").removeClass("even odd");
+              $("#tblData").find("tr:even").addClass("even");
+              $("#tblData").find("tr:odd").addClass("odd");
+            }
+          });
+        });
+        </script>      
+  
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #dddddd;
+        }
+        .even {
+            background-color: #ecf6fc;
+        }
+        .odd {
+            background-color: #ddeedd;
+        }
+        .myDragClass {
+            background-color: yellow;
+            font-size: 16pt;
+        }
+    </style>      
 
-<table id="tblData">
-   <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Country</th>
-   </tr>
-   <tr>
-      <td>Maria Anders</td>
-      <td>30</td>
-      <td>Germany</td>
-   </tr>
-   <tr>
-      <td>Francisco Chang</td>
-      <td>24</td>
-      <td>Mexico</td>
-   </tr>
-   <tr>
-      <td>Roland Mendel</td>
-      <td>100</td>
-      <td>Austria</td>
-   </tr>
-   <tr>
-      <td>Helen Bennett</td>
-      <td>28</td>
-      <td>UK</td>
-   </tr>
-   <tr>
-      <td>Yoshi Tannamuri</td>
-      <td>35</td>
-      <td>Canada</td>
-   </tr>
-   <tr>
-      <td>Giovanni Rovelli</td>
-      <td>46</td>
-      <td>Italy</td>
-   </tr>
-   <tr>
-      <td>Narendra Sharma</td>
-      <td>56</td>
-      <td>India</td>
-   </tr>
-   <tr>
-      <td>Alex Smith</td>
-      <td>59</td>
-      <td>USA</td>
-   </tr>
-</table>
+   </head>
+ 
+   <body>
+    <table id="tblData">
+        <tr>
+           <th>Name</th>
+           <th>Age</th>
+           <th>Country</th>
+        </tr>
+        <tr>
+           <td>Maria Anders</td>
+           <td>30</td>
+           <td>Germany</td>
+        </tr>
+        <tr>
+           <td>Francisco Chang</td>
+           <td>24</td>
+           <td>Mexico</td>
+        </tr>
+        <tr>
+           <td>Roland Mendel</td>
+           <td>100</td>
+           <td>Austria</td>
+        </tr>
+        <tr>
+           <td>Helen Bennett</td>
+           <td>28</td>
+           <td>UK</td>
+        </tr>
+        <tr>
+           <td>Yoshi Tannamuri</td>
+           <td>35</td>
+           <td>Canada</td>
+        </tr>
+        <tr>
+           <td>Giovanni Rovelli</td>
+           <td>46</td>
+           <td>Italy</td>
+        </tr>
+        <tr>
+           <td>Narendra Sharma</td>
+           <td>56</td>
+           <td>India</td>
+        </tr>
+        <tr>
+           <td>Alex Smith</td>
+           <td>59</td>
+           <td>USA</td>
+        </tr>
+     </table>    
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script>
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $("#tblData").find("tr:even").addClass("even");
-  $("#tblData").find("tr:odd").addClass("odd");
-  $("#tblData").tableDnD({
-    onDragClass: "myDragClass",
-    onDrop: function(table, row) {
-      $("#tblData").find("tr").removeClass("even odd");
-      $("#tblData").find("tr:even").addClass("even");
-      $("#tblData").find("tr:odd").addClass("odd");
-    }
-  });
-});
-</script>
-
-</body>
+   </body>
 </html>
